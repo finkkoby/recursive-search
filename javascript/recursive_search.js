@@ -1,11 +1,18 @@
 function recursiveSearch(arr, target) {
-  // type your code here
+  if (arr.length === 0) {
+    return false;
+  } else if (arr[0] === target) {
+    return true;
+  } else {
+    arr.shift()
+    return recursiveSearch(arr, target)
+  }
 }
 
 if (require.main === module) {
   // add your own tests in here
   console.log("Expecting: true");
-  console.log("=>", recursiveSearch([1, 2, 3], 2));
+  console.log("=>", recursiveSearch([2, 1, 3], 2));
 
   console.log("");
 
